@@ -1,0 +1,92 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+void moMenu()
+{
+	
+		cout << "\n\t************************Mobile Money Service*****************************";
+		cout << "\n\t*                                                                       *";
+		cout << "\n\t*                       1. Tranfer Money                                *";
+		cout << "\n\t*                       2. Balance                                      *";
+		cout << "\n\t*                       3. Deposit                                    *";
+	        cout << "\n\t*                       4. Withdraw                                     *";
+		cout << "\n\t*                       5. Restting Pin                                 *";
+		cout << "\n\t*                       6. Exit                                         *";
+		cout << "\n\t*                                                                       *";
+		cout << "\n\t*************************************************************************";
+}
+int main()
+ {
+	
+	int input, balance= 1000, pin = 0000;
+	double deposit, withdraw;
+	char name [32];
+	
+	do
+	{
+	moMenu();	
+	cout << "input: ";
+	cin >> input;
+	system ("cls");
+	
+		switch (input)
+			{
+				case 1:
+				    cout << "This Feature Is Under Construction" << endl;
+				    break;
+				    
+				case 2:
+				    cout << "Current Balance is : GHS" << balance << endl;
+				    break;
+				        
+				case 3:
+				    cout << "Enter Amount : GHS";
+				    cin >> deposit;
+				    balance += deposit; // balance = balance + deposit
+				    cout << "\nYou Have Successfully Deposited : GHS" << deposit;
+				    cout << endl << endl;
+				    break;
+
+				    
+				case 4:
+				    cout << "Enter Amount: GHS";
+				    cin >> withdraw;
+				    if (withdraw >= balance)
+				    {
+					cout << "\nINSUFFICIENT FUNDS!! to perform this Transaction" << endl;
+					break;
+				    }
+				else
+				balance -= withdraw;
+				cout << "\nYou Have Successfully Withdrawn : GHS" << withdraw;
+				break;
+			    case 5:
+			    	int oldPin;
+			     	cout <<"\nConfirm Previous Pin: >> ";
+			     	cin >> oldPin;
+			     	
+			     	if (pin==pin)
+			     	{
+			     		cout << "Enter New Pin: >>";
+			     		cin >> pin;
+					}
+					else
+					{
+					cout << "\nINCORRECT PIN - Try Again" << endl;} 
+				
+					
+					cout << "\nYou Have Successfully changed Your Pin" << endl;
+					
+					break;
+		}
+		
+    }while(input !=6);
+    
+    
+	return 0;
+} 
+
+
+
+
+	
